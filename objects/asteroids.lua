@@ -99,7 +99,7 @@ function Asteroids(x, y, ast_size, level, sfx)
             end
 
             -- play asteroid destroy sfx
-            sfx:playFX("asteroid_explosion")
+            --sfx:playFX("asteroid_explosion")
             table.remove(asteroids_tbl, index)
         end
     }
