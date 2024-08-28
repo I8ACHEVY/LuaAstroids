@@ -1,6 +1,6 @@
 local love = require "love"
 
-local Button = require "components/Button"
+local Button = require "components/button"
 
 function Menu(game, player, sfx)
     local funcs = {

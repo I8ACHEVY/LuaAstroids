@@ -2,7 +2,7 @@ require "globals"
 
 local love = require "love"
 
-local Lazer = require "objects/Lazer"
+local Lazer = require "objects/lazer"
 
 function Player(num_lives, sfx)
     local SHIP_SIZE = 30

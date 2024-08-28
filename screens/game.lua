@@ -1,7 +1,7 @@
 local love = require "love"
 
-local Text = require "../components/Text"
-local Asteroids = require "../objects/Asteroids"
+local Text = require "../components/text"
+local Asteroids = require "../objects/asteroids"
 
 function Game(save_data, sfx)
     return {
@@ -13,15 +13,15 @@ function Game(save_data, sfx)
             ended = false
         },
         score = 0,
-        high_score = save_data.high_score or 0,
+        high_score = 0, --save_data.high_score or
         screen_text = {},
         game_over_showing = false,
 
-        saveGame = function(self)
-            writeJSON("save", {
-                high_score = self.high_score
-            })
-        end,
+        -- saveGame = function(self)
+        --     writeJSON("save", {
+        --         high_score = self.high_score
+        --     })
+        --end,
 
         changeGameState = function(self, state)
             self.state.menu = state == "menu"
@@ -49,7 +49,7 @@ function Game(save_data, sfx)
             self.game_over_showing = true
 
             -- save high score
-            self:saveGame()
+            --self:saveGame()
         end,
 
         draw = function(self, faded)

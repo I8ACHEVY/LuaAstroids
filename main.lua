@@ -1,8 +1,8 @@
 require("debug")
 
---require "globals"
+require "globals"
 
--- local love = require "love"
+local love = require "love"
 
 local Player = require "objects/player"
 local Game = require "screens/game"
@@ -13,14 +13,14 @@ local SFX = require "components/sfx"
 math.randomseed(os.time())
 
 local function reset()
-    local save_data = readJSON("save")
+    --local save_data = readJSON("save")
 
     -- create the soundeffects
-    sfx = sfx()
+    sfx = SFX()
 
     -- added sfx here and into below objects
     player = Player(3, sfx)
-    game = Game(save_data, sfx)
+    game = Game(sfx) --save_data,
     menu = Menu(game, player, sfx)
 
     destroy_ast = false
